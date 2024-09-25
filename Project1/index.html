@@ -12,7 +12,7 @@
     <div class="container">
         <div class="form-container">
             <h1>तुमचे प्रोफाइल कार्ड तयार करा</h1>
-            <form id="cardForm">
+            <form id="cardForm" action="save_card.php" method="POST" enctype="multipart/form-data">
                 <div class="input-group">
                     <label for="name">तुमचे नाव:</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name">
@@ -22,7 +22,7 @@
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
                 </div>
                 <button type="submit">कार्ड तयार करा</button>
-            </form>
+            </form>            
         </div>
         <div id="cardPreview" class="card-preview">
             <div id="card" class="card">
