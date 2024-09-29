@@ -63,3 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function saveCardToDatabase(name, imageData) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'save_card.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText); // Response from the PHP script
+        }
+    };
+
+    // Send name and imageData (base64) to the server
+    xhr.send('name=' + encodeURIComponent(name) + '&imageData=' + encodeURIComponent(imageData));
+}
